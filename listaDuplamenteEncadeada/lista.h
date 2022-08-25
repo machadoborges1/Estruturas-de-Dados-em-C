@@ -17,4 +17,5 @@ int inserir_final(Lista* li, struct aluno al);
 int remocao_inicio_lista(Lista* li);
 int remocao_final_lista(Lista* li);
 int remove_elemento_lista(Lista* li, int matricula);
-
+int busca_por_posicao(Lista* li, int posicao, struct aluno *al);
+int busca_por_elemento(Lista* li, int matricula, struct aluno *al);

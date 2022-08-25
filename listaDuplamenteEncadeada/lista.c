@@ -143,3 +143,30 @@ int remove_elemento_lista(Lista* li, int matricula){
     free(no);
     return 1;
 }
+
+int busca_por_posicao(Lista* li, int posicao, struct aluno *al){
+    if(li == NULL || posicao <=0) return 0;
+    Elem *no = *li;
+    int i = 1;
+    while(no != NULL && i < posicao){
+        no = no->prox;
+        i++;
+    }
+    if(no == NULL) return 0;
+    else{
+        *al = no->dados; 
+        return 1;
+    }
+}
+
+int busca_por_elemento(Lista* li, int matricula, struct aluno *al){
+    if(li == NULL || matricula <= 0) return 0;
+    Elem *no = *li;
+    while(no != NULL && no->dados.matricula != matricula)
+        no = no->prox;
+    if(no == NULL) return 0;
+    else {
+        *al = no->dados;
+        return 1;
+    }
+}
