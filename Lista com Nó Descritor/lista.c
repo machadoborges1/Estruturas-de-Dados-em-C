@@ -2,11 +2,20 @@
 #include <stdlib.h>
 #include "lista.h"
 
-struct no_descritor
+struct elemento
 {
-    Aluno *inicio, *final;
-    int qtd;
+    Aluno dados;
+    struct elemento *prox;
 };
+typedef struct elemento elen;
+
+struct descritor
+{
+    struct elemento *inicio;
+    struct elemento *final;
+    int qtd;;
+}
+
 
 Lista* inicio(){
     Lista *li = (Lista*)malloc(sizeof(Lista));
