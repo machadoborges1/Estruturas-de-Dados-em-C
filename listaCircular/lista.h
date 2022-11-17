@@ -1,6 +1,7 @@
 struct aluno
 {
     int matricula;
+
 };
 typedef struct elemento *Lista;
 Lista* cria_lista();
